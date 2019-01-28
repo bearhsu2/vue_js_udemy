@@ -8,7 +8,8 @@
 <body>
 
 <div id="app">
-    <input type="text" v-on:input="changeTitle">
+    <input type="text" v-on:input="changeTitle"><br>
+    <h v-once>{{ title }}</h>
     <p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
 </div>
 
@@ -25,6 +26,7 @@
                 this.title = event.target.value;
             },
             sayHello: function () {
+                this.title = 'Hello!';
                 return this.title;
             }
         }
