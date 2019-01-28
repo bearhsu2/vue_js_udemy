@@ -9,7 +9,7 @@
 
 <div id="app">
     <input type="text" v-on:input="changeTitle">
-    <p>{{ title }}</p>
+    <p>{{ sayHello() }}</p>
 </div>
 
 <script>
@@ -22,6 +22,9 @@
             changeTitle: function (event) {
 
                 this.title = event.target.value;
+            },
+            sayHello: function () {
+                return this.title;
             }
         }
 
