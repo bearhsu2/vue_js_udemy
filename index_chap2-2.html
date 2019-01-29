@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <title>VueJS</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    <button v-on:click="increase">Click Me</button>
+    <p>{{ counter }}</p>
+
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            counter: 0
+        },
+        methods: {
+            increase: function () {
+                this.counter++;
+            }
+        }
+
+    });
+
+</script>
+
+
+</body>
+</html>
