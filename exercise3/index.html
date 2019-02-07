@@ -15,7 +15,7 @@
     </div>
     <!-- 2) Watch for changes in the "result" and reset the "value" after 5 seconds (hint: setTimeout(..., 5000) -->
     <div>
-        <input type="text" v-on:input="changeTimeout">
+        <input type="text" v-model="timeoutMs">
         <p>{{ value }}</p>
     </div>
 </div>
@@ -25,7 +25,7 @@
         el: '#exercise',
         data: {
             value: 0,
-            timeoutms: 5000
+            timeoutMs: 5000
         },
         computed: {
             result: function () {
@@ -35,16 +35,12 @@
         watch: {
             result: function (event) {
                 var vm = this;
-                console.log(vm.timeoutms);
+                console.log("Set timeout: " + vm.timeoutMs);
                 setTimeout(function () {
+                    console.log("Time's up");
                     vm.value = 0;
-                }, vm.timeoutms)
+                }, vm.timeoutMs)
 
-            }
-        },
-        methods: {
-            changeTimeout: function (event) {
-                this.timeoutms = event.target.value;
             }
         }
     });
