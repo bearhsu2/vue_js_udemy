@@ -9,7 +9,7 @@
 
 <div id="app">
 
-    <div class="demo" @click="attachRed = !attachRed" :class="{red: attachRed}"></div>
+    <div class="demo" @click="attachRed = !attachRed" :class="divClasses"></div>
     <div class="demo" :class="{red: attachRed}"></div>
     <div class="demo"></div>
 </div>
@@ -19,6 +19,14 @@
         el: '#app',
         data: {
             attachRed: false
+        },
+        computed: {
+            divClasses: function () {
+                return {
+                    red: this.attachRed,
+                    blue: !this.attachRed
+                }
+            }
         }
     });
 
@@ -32,12 +40,15 @@
         display: inline-block;
         margin: 10px;
     }
+
     .red {
         background-color: red;
     }
+
     .green {
         background-color: green;
     }
+
     .blue {
         background-color: blue;
     }
