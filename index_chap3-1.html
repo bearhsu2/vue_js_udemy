@@ -11,6 +11,12 @@
 
     <p v-if="show">You Can See Me</p>
     <p v-else>Hidden</p>
+
+    <template v-if="show">
+        <h1>Head</h1>
+        <p>Inside a template</p>
+    </template>
+
     <p>Also See Me</p>
     <button @click="show = !show">Switch</button>
 </div>
