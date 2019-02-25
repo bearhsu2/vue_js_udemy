@@ -17,21 +17,34 @@
         <p>Inside a template</p>
     </template>
 
+
     <p v-show="show">Also See Me</p>
     <button @click="show = !show">Switch</button>
+
+
+    <ul>
+        <li v-for="ingredient in ingredients"> {{ ingredient }}</li>
+
+    </ul>
+
+
 </div>
 
 <script>
     new Vue({
         el: '#app',
         data: {
-            show: true
+            show: true,
+            ingredients: ['meat', 'fruit', 'cookies'],
+            persons: [
+                {name: 'Max', age: 27, color: 'red'},
+                {name: 'Anna', age: 'unknown', color: 'blue'}
+            ]
         },
 
     });
 
 </script>
-
 
 
 </body>
